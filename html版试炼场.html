@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>试炼场 - 洛谷 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="csrf-token" content="1583678012:sLGMZuT+pPSwMTXKESBRc7MH+6uRFB1P5peXg1aMrXI=">
+        <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/luogu3.css?ver=20190102">
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/highlight_tomorrow.css">
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/markdown-palettes/markdown-palettes.css?ver=20190219">
+    <script src="https://cdn.luogu.com.cn/js/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.luogu.com.cn/js/luogu3_pre.js?ver=20190101"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/fe/loader.css?ver=20200307">
+    <script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3A%7B%22blogAddress%22%3A%22https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fblog%5C%2FHappynewyear%5C%2F%22%2C%22followingCount%22%3A337%2C%22followerCount%22%3A127%2C%22ranking%22%3A4906%2C%22unreadMessageCount%22%3A0%2C%22unreadNoticeCount%22%3A0%2C%22verified%22%3Atrue%2C%22uid%22%3A87746%2C%22name%22%3A%22Happynewyear%22%2C%22slogan%22%3A%22%5Cu53ef%5Cu7231%5Cu7684%5Cu5973%5Cu5b69%5Cu5b50%5Cu5c0f%5Cu65b0~https%3A%5C%2F%5C%2Fspace.bilibili.com%5C%2F338142387%20%5Cu6c42%5Cu5173%5Cu6ce8%5Cu70b9%5Cu8d5e~%22%2C%22badge%22%3A%22%22%2C%22isAdmin%22%3Afalse%2C%22isBanned%22%3Afalse%2C%22color%22%3A%22Green%22%2C%22ccfLevel%22%3A3%7D%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu8bd5%5Cu70bc%5Cu573a%22%2C%22title%22%3A%22%5Cu8bd5%5Cu70bc%5Cu573a%22%7D%2C%22currentTheme%22%3A%7B%22id%22%3A24441%2C%22header%22%3A%7B%22imagePath%22%3A%22https%3A%5C%2F%5C%2Fi0.hdslb.com%5C%2Fbfs%5C%2Farchive%5C%2Fed92db305ae43c7fc8a59b1789934caa2636b876.png%22%2C%22color%22%3A%5B%5B244%2C90%2C141%2C1%5D%5D%2C%22blur%22%3A0%2C%22brightness%22%3A0%2C%22degree%22%3A90%2C%22repeat%22%3A0%2C%22position%22%3A%5B50%2C50%5D%2C%22size%22%3A%5B0%2C0%5D%2C%22type%22%3A1%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CHeaderFooterConfig%22%7D%2C%22sideNav%22%3A%7B%22logoBackgroundColor%22%3A%5B244%2C90%2C141%2C1%5D%2C%22color%22%3A%5B244%2C90%2C141%2C1%5D%2C%22invertColor%22%3Atrue%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CSideNavConfig%22%7D%2C%22footer%22%3A%7B%22imagePath%22%3A%22https%3A%5C%2F%5C%2Fs2.ax1x.com%5C%2F2019%5C%2F08%5C%2F02%5C%2Fe0G6VU.jpg%22%2C%22color%22%3A%5B%5B244%2C90%2C141%2C1%5D%5D%2C%22blur%22%3A0%2C%22brightness%22%3A0%2C%22degree%22%3A0%2C%22repeat%22%3A0%2C%22position%22%3A%5B0%2C0%5D%2C%22size%22%3A%5B-1%2C-1%5D%2C%22type%22%3A1%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CHeaderFooterConfig%22%7D%7D%7D"));window._feConfigVersion=1583591058;</script>
+    <script>window._release = '20200307';</script>
+    <script src="https://cdn.luogu.com.cn/fe/loader.js?ver=20200307" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-old{
+        display: block;
+        margin-bottom: 2em;
+        /* position: relative;*/
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-old">
+<div class="lg-toolbar" data-am-sticky>
+    <h1>洛谷试炼场</h1>
+</div>
+<div class="am-g lg-main-content">
+    <div class="am-u-md-4 am-u-lg-3 lg-right">
+        <section class="am-panel am-panel-default lg-summary">
+            <div class="lg-summary-content">
+                                    <h1><a data-pjax href="/user/87746">Happynewyear</a></h1>
+                    <ul class="am-list am-list-static lg-summary-list">
+
+                        <li><strong>通过关卡数/最近通关</strong>
+                            <span class="lg-right">58 / 4-4</span></li>
+                        <li><strong>可跳过关卡数/已跳过</strong>
+                            <span class="lg-right">3 / 0</span></li>
+                    </ul>
+                                <p>1、量变导致质变。只有通过一定数量的科学的练习，能力才能得到提升。</p>
+                <p>2、只有AC掉某任务的全部题目，方可完成这个任务。某些任务需要解锁先决任务。</p>
+
+
+            </div>
+        </section>
+    </div>
+    <div class="am-u-md-8 am-u-lg-9 lg-right">
+        <div class="lg-content-left">
+            <div class="lg-article am-g">
+                <div class="lg-record-tile lg-bg-red" tolv="1">
+                    <small>#1</small>
+                    <strong class="am-icon-gamepad"></strong>
+                    <small class="am-text-center">新手村</small>
+                </div>
+                <div class="lg-record-tile lg-bg-orange" tolv="2">
+                    <small>#2</small>
+                    <strong class="am-icon-trophy"></strong>
+                    <small class="am-text-center">普及练习场</small>
+                </div>
+                <div class="lg-record-tile lg-bg-purple" tolv="3">
+                    <small>#3</small>
+                    <strong class="am-icon-diamond"></strong>
+                    <small class="am-text-center">提高历练地</small>
+                </div>
+                <div class="lg-record-tile lg-bg-green" tolv="4">
+                    <small>#4</small>
+                    <strong class="am-icon-graduation-cap"></strong>
+                    <small class="am-text-center">省选斗兽场</small>
+                </div>
+                <div class="lg-record-tile lg-bg-bluedark" tolv="5">
+                    <small>#5</small>
+                    <strong class="am-icon-underline"></strong>
+                    <small class="am-text-center">USACO</small>
+                </div>
+            </div>
+            <div class="lg-article am-g">
+                                    <h2 traininglv="1">新手村</h2>
+                    任何一个伟大的目标，都有一个微不足道的开始。                    <hr>
+                                            <div class="am-g">
+                            <div class="am-u-md-10">
+                                <div class="am-progress">
+                                    <div class="am-progress-bar"
+                                         style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="am-u-md-2"><strong>8 / 8 达成</strong></div>
+                        </div>
+                        <hr>
+                                        <div>
+                                                        <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-1">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-1">
+                                        <h3 class="am-panel-title">
+                                            <a>洛谷的第一个任务</a>
+                                            <small class="right">111440人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-1，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-2">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-2">
+                                        <h3 class="am-panel-title">
+                                            <a>顺序与分支</a>
+                                            <small class="right">79617人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-2，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-3">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-3">
+                                        <h3 class="am-panel-title">
+                                            <a>循环！循环！循环！</a>
+                                            <small class="right">73265人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-3，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-4">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-4">
+                                        <h3 class="am-panel-title">
+                                            <a>数组</a>
+                                            <small class="right">63658人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-4，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">跟数组有关的题目基本上都要用到循环，所以请先完成1-3。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-5">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-5">
+                                        <h3 class="am-panel-title">
+                                            <a>简单字符串</a>
+                                            <small class="right">45448人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-5，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-6">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-6">
+                                        <h3 class="am-panel-title">
+                                            <a>过程函数与递归</a>
+                                            <small class="right">33084人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-6，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-7">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-7">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-入门综合练习1</a>
+                                            <small class="right">29919人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-7，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="1-8">
+                                    <header class="am-panel-hd" name="missionselect" missionid="1-8">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-入门综合练习2</a>
+                                            <small class="right">26901人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡1-8，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！</p>
+                                    </div>
+                                </section>
+
+                                                </div>
+                                    <h2 traininglv="2">普及练习场</h2>
+                    普及组选手可冲刺训练，提高组选手亦可在此巩固基础。                    <hr>
+                                            <div class="am-g">
+                            <div class="am-u-md-10">
+                                <div class="am-progress">
+                                    <div class="am-progress-bar"
+                                         style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="am-u-md-2"><strong>25 / 25 达成</strong></div>
+                        </div>
+                        <hr>
+                                        <div>
+                                                        <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-1">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-1">
+                                        <h3 class="am-panel-title">
+                                            <a>简单的模拟</a>
+                                            <small class="right">31000人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-1，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-2">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-2">
+                                        <h3 class="am-panel-title">
+                                            <a>交叉模拟</a>
+                                            <small class="right">14654人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-2，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-3">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-3">
+                                        <h3 class="am-panel-title">
+                                            <a>排序</a>
+                                            <small class="right">27708人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-3，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-4">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-4">
+                                        <h3 class="am-panel-title">
+                                            <a>排序Ex</a>
+                                            <small class="right">16341人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-4，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-5">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-5">
+                                        <h3 class="am-panel-title">
+                                            <a>字符串处理</a>
+                                            <small class="right">12592人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-5，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-6">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-6">
+                                        <h3 class="am-panel-title">
+                                            <a>贪心</a>
+                                            <small class="right">19734人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-6，8                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-7">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-7">
+                                        <h3 class="am-panel-title">
+                                            <a>深度优先搜索</a>
+                                            <small class="right">15557人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-7，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-8">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-8">
+                                        <h3 class="am-panel-title">
+                                            <a>广度优先搜索</a>
+                                            <small class="right">12005人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-8，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-9">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-9">
+                                        <h3 class="am-panel-title">
+                                            <a>带有技巧的搜索</a>
+                                            <small class="right">7369人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-9，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-10">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-10">
+                                        <h3 class="am-panel-title">
+                                            <a>分治算法</a>
+                                            <small class="right">10595人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-10，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-11">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-11">
+                                        <h3 class="am-panel-title">
+                                            <a>简单数学问题</a>
+                                            <small class="right">11221人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-11，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-12">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-12">
+                                        <h3 class="am-panel-title">
+                                            <a>递推与递归二分</a>
+                                            <small class="right">12561人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-12，7                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-13">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-13">
+                                        <h3 class="am-panel-title">
+                                            <a>线性数据结构</a>
+                                            <small class="right">13381人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-13，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-14">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-14">
+                                        <h3 class="am-panel-title">
+                                            <a>树形数据结构</a>
+                                            <small class="right">8398人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-14，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-15">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-15">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划的背包问题</a>
+                                            <small class="right">21618人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-15，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-16">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-16">
+                                        <h3 class="am-panel-title">
+                                            <a>线性动态规划</a>
+                                            <small class="right">11254人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-16，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-17">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-17">
+                                        <h3 class="am-panel-title">
+                                            <a>多维动态规划</a>
+                                            <small class="right">8430人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-17，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-18">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-18">
+                                        <h3 class="am-panel-title">
+                                            <a>更要技巧的动规与记忆化</a>
+                                            <small class="right">6499人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-18，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-19">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-19">
+                                        <h3 class="am-panel-title">
+                                            <a>高精度算法</a>
+                                            <small class="right">12985人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-19，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-20">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-20">
+                                        <h3 class="am-panel-title">
+                                            <a>贪心EX</a>
+                                            <small class="right">3178人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-20，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-21">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-21">
+                                        <h3 class="am-panel-title">
+                                            <a>简单数学</a>
+                                            <small class="right">4973人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-21，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-22">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-22">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-普及综合练习1</a>
+                                            <small class="right">3841人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-22，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-23">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-23">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-普及综合练习2</a>
+                                            <small class="right">4405人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-23，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-24">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-24">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-普及综合练习3</a>
+                                            <small class="right">4070人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-24，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="2-25">
+                                    <header class="am-panel-hd" name="missionselect" missionid="2-25">
+                                        <h3 class="am-panel-title">
+                                            <a>普及常见模板</a>
+                                            <small class="right">11054人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡2-25，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里集中了比较基础的算法的模板。提高和省选也有模板题哦！</p>
+                                    </div>
+                                </section>
+
+                                                </div>
+                                    <h2 traininglv="3">提高历练地</h2>
+                    已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！                    <hr>
+                                            <div class="am-g">
+                            <div class="am-u-md-10">
+                                <div class="am-progress">
+                                    <div class="am-progress-bar"
+                                         style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="am-u-md-2"><strong>22 / 22 达成</strong></div>
+                        </div>
+                        <hr>
+                                        <div>
+                                                        <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-1">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-1">
+                                        <h3 class="am-panel-title">
+                                            <a>搜索Ex</a>
+                                            <small class="right">3077人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-1，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-2">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-2">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划TG.lv(1)</a>
+                                            <small class="right">3958人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-2，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-3">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-3">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划TG.lv(2)</a>
+                                            <small class="right">2394人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-3，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-4">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-4">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划TG.lv(3)</a>
+                                            <small class="right">1205人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-4，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-5">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-5">
+                                        <h3 class="am-panel-title">
+                                            <a>数论</a>
+                                            <small class="right">4153人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-5，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-6">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-6">
+                                        <h3 class="am-panel-title">
+                                            <a>博弈论</a>
+                                            <small class="right">1548人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-6，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-7">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-7">
+                                        <h3 class="am-panel-title">
+                                            <a>其他数学问题</a>
+                                            <small class="right">1048人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-7，7                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-8">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-8">
+                                        <h3 class="am-panel-title">
+                                            <a>图的遍历</a>
+                                            <small class="right">4243人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-8，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-9">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-9">
+                                        <h3 class="am-panel-title">
+                                            <a>最短路问题</a>
+                                            <small class="right">5582人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-9，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-10">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-10">
+                                        <h3 class="am-panel-title">
+                                            <a>最小生成树</a>
+                                            <small class="right">4647人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-10，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-11">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-11">
+                                        <h3 class="am-panel-title">
+                                            <a>较复杂图论I</a>
+                                            <small class="right">3040人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-11，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-12">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-12">
+                                        <h3 class="am-panel-title">
+                                            <a>较复杂图论II</a>
+                                            <small class="right">1968人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-12，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-13">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-13">
+                                        <h3 class="am-panel-title">
+                                            <a>并查集</a>
+                                            <small class="right">5195人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-13，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-14">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-14">
+                                        <h3 class="am-panel-title">
+                                            <a>堆</a>
+                                            <small class="right">2092人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-14，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-15">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-15">
+                                        <h3 class="am-panel-title">
+                                            <a>线段树树状数组基础</a>
+                                            <small class="right">2993人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-15，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-16">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-16">
+                                        <h3 class="am-panel-title">
+                                            <a>神奇的解法</a>
+                                            <small class="right">2285人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-16，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-17">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-17">
+                                        <h3 class="am-panel-title">
+                                            <a>倍增</a>
+                                            <small class="right">1232人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-17，3                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-18">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-18">
+                                        <h3 class="am-panel-title">
+                                            <a>强连通分量</a>
+                                            <small class="right">1436人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-18，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">强连通分量</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-19">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-19">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-提高综合练习1</a>
+                                            <small class="right">805人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-19，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-20">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-20">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-提高综合练习2</a>
+                                            <small class="right">844人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-20，5                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-21">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-21">
+                                        <h3 class="am-panel-title">
+                                            <a>BOSS战-提高综合练习3</a>
+                                            <small class="right">2274人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-21，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="3-22">
+                                    <header class="am-panel-hd" name="missionselect" missionid="3-22">
+                                        <h3 class="am-panel-title">
+                                            <a>提高模板-nlogn数据结构</a>
+                                            <small class="right">6906人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡3-22，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。</p>
+                                    </div>
+                                </section>
+
+                                                </div>
+                                    <h2 traininglv="4">省选斗兽场/NOI神殿</h2>
+                    为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。                    <hr>
+                                            <div class="am-g">
+                            <div class="am-u-md-10">
+                                <div class="am-progress">
+                                    <div class="am-progress-bar"
+                                         style="width: 8.3333333333333%"></div>
+                                </div>
+                            </div>
+                            <div class="am-u-md-2"><strong>2 / 24 达成</strong></div>
+                        </div>
+                        <hr>
+                                        <div>
+                                                        <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-1">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-1">
+                                        <h3 class="am-panel-title">
+                                            <a>省选基础-读入/输出优化</a>
+                                            <small class="right">928人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-1，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">读入/输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-2">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-2">
+                                        <h3 class="am-panel-title">
+                                            <a>省选基础-位运算</a>
+                                            <small class="right">595人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-2，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="4-3">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-3">
+                                        <h3 class="am-panel-title">
+                                            <a>省选基础-打表</a>
+                                            <small class="right">2014人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-3，3                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="4-4">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-4">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划1</a>
+                                            <small class="right">1849人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-4，6                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small">动态规划</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-5">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-5">
+                                        <h3 class="am-panel-title">
+                                            <a>动态规划2</a>
+                                            <small class="right">624人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-5，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">动态规划</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-6">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-6">
+                                        <h3 class="am-panel-title">
+                                            <a>网络流——最大流</a>
+                                            <small class="right">1075人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-6，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">最大流</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-7">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-7">
+                                        <h3 class="am-panel-title">
+                                            <a>网络流——费用流</a>
+                                            <small class="right">602人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-7，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">费用流</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-8">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-8">
+                                        <h3 class="am-panel-title">
+                                            <a>单调队列</a>
+                                            <small class="right">557人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-8，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">单调队列</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-9">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-9">
+                                        <h3 class="am-panel-title">
+                                            <a>概率期望</a>
+                                            <small class="right">271人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-9，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">概率期望</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-10">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-10">
+                                        <h3 class="am-panel-title">
+                                            <a>二分图</a>
+                                            <small class="right">736人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-10，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">二分图</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-11">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-11">
+                                        <h3 class="am-panel-title">
+                                            <a>点分治</a>
+                                            <small class="right">430人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-11，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">点分治</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-12">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-12">
+                                        <h3 class="am-panel-title">
+                                            <a>后缀数组</a>
+                                            <small class="right">388人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-12，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">后缀数组</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-13">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-13">
+                                        <h3 class="am-panel-title">
+                                            <a>主席树</a>
+                                            <small class="right">519人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-13，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">主席树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-14">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-14">
+                                        <h3 class="am-panel-title">
+                                            <a>数位DP</a>
+                                            <small class="right">317人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-14，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">数位DP</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-15">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-15">
+                                        <h3 class="am-panel-title">
+                                            <a>AC自动机</a>
+                                            <small class="right">1140人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-15，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">AC自动机</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-16">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-16">
+                                        <h3 class="am-panel-title">
+                                            <a>平衡树</a>
+                                            <small class="right">350人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-16，7                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">平衡树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-17">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-17">
+                                        <h3 class="am-panel-title">
+                                            <a>树链剖分</a>
+                                            <small class="right">1714人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-17，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">树链剖分</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-18">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-18">
+                                        <h3 class="am-panel-title">
+                                            <a>动态树</a>
+                                            <small class="right">786人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-18，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">动态树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-19">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-19">
+                                        <h3 class="am-panel-title">
+                                            <a>树套树</a>
+                                            <small class="right">245人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-19，7                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">树套树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-20">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-20">
+                                        <h3 class="am-panel-title">
+                                            <a>可持久化Trie树</a>
+                                            <small class="right">242人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-20，7                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">可持久化Trie树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-21">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-21">
+                                        <h3 class="am-panel-title">
+                                            <a>莫队算法</a>
+                                            <small class="right">797人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-21，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">莫队算法</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-22">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-22">
+                                        <h3 class="am-panel-title">
+                                            <a>分块</a>
+                                            <small class="right">937人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-22，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">分块</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-23">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-23">
+                                        <h3 class="am-panel-title">
+                                            <a>莫比乌斯反演</a>
+                                            <small class="right">743人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-23，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">莫比乌斯反演</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="4-24">
+                                    <header class="am-panel-hd" name="missionselect" missionid="4-24">
+                                        <h3 class="am-panel-title">
+                                            <a>其他</a>
+                                            <small class="right">137人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡4-24，11                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">其他</p>
+                                    </div>
+                                </section>
+
+                                                </div>
+                                    <h2 traininglv="5">USACO</h2>
+                    美国经典的算法练习题库，值得一刷                    <hr>
+                                            <div class="am-g">
+                            <div class="am-u-md-10">
+                                <div class="am-progress">
+                                    <div class="am-progress-bar"
+                                         style="width: 4.5454545454545%"></div>
+                                </div>
+                            </div>
+                            <div class="am-u-md-2"><strong>1 / 22 达成</strong></div>
+                        </div>
+                        <hr>
+                                        <div>
+                                                        <section class="lg-training-out am-panel am-panel-success"
+                                         missionid="5-1">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-1">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 1.1</a>
+                                            <small class="right">2803人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-1，4                                        道题 <span class="am-badge am-radius lg-bg-green">已通过</span><br>
+                                        <p class="lg-small"></p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-2">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-2">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 1.2</a>
+                                            <small class="right">1165人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-2，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">完全枚举</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-3">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-3">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 1.3</a>
+                                            <small class="right">973人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-3，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">贪心</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-4">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-4">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 1.4</a>
+                                            <small class="right">1075人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-4，2                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">有技巧的枚举</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-5">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-5">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 1.5</a>
+                                            <small class="right">1919人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-5，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">二进制数</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-6">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-6">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 2.1</a>
+                                            <small class="right">545人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-6，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">图论和洪水填充</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-7">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-7">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 2.2</a>
+                                            <small class="right">476人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-7，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">数据结构与动态规划</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-8">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-8">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 2.3</a>
+                                            <small class="right">395人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-8，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"></p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-9">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-9">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 2.4</a>
+                                            <small class="right">303人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-9，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">最短路径</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-10">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-10">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 3.1</a>
+                                            <small class="right">291人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-10，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">最小生成树</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-11">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-11">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 3.2</a>
+                                            <small class="right">243人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-11，6                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">背包问题</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-12">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-12">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 3.3</a>
+                                            <small class="right">236人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-12，5                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">欧拉回路</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-13">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-13">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 3.4</a>
+                                            <small class="right">302人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-13，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">计算几何</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-14">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-14">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 4.1</a>
+                                            <small class="right">264人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-14，2                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">最优化</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-15">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-15">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 4.2</a>
+                                            <small class="right">208人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-15，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">网络流</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-16">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-16">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 4.3</a>
+                                            <small class="right">154人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-16，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">高精度</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-17">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-17">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 4.4</a>
+                                            <small class="right">151人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-17，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"></p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-18">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-18">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 5.1</a>
+                                            <small class="right">152人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-18，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small">二维凸包 </p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-19">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-19">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 5.2</a>
+                                            <small class="right">589人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-19，1                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"> </p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-20">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-20">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 5.3</a>
+                                            <small class="right">154人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-20，4                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"> 启发式搜索</p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-21">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-21">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 5.4</a>
+                                            <small class="right">230人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-21，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"></p>
+                                    </div>
+                                </section>
+
+                                                            <section class="lg-training-out am-panel am-panel-secondary"
+                                         missionid="5-22">
+                                    <header class="am-panel-hd" name="missionselect" missionid="5-22">
+                                        <h3 class="am-panel-title">
+                                            <a>USACO Section 5.5</a>
+                                            <small class="right">361人过关</small>
+                                        </h3>
+                                    </header>
+                                    <div class="am-panel-bd lg-training-content">
+                                        关卡5-22，3                                        道题 <span class="am-badge am-radius lg-bg-bluelight">可挑战</span><br>
+                                        <p class="lg-small"></p>
+                                    </div>
+                                </section>
+
+                                                </div>
+                            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $("[name=missionselect]").click(
+        function () {
+            var missionid = $(this).attr("missionid");
+            $(".lg-sub-article").remove();
+            $("section[missionid=" + missionid + "]").after("<div class='lg-sub-article'></div>");
+            $(".lg-sub-article").html(loadstr[mt_rand(0, 2)]);
+            $.get("/training/ajax_get_detail?missionid=" + missionid,
+                function (data) {
+                    var arr = eval('(' + data + ')');
+                    if (arr['code'] == 0) {
+                        $(".lg-sub-article").remove();
+                        show_alert("提示", arr['message']);
+                    }
+                    else if (arr['code'] == 200) {
+                        $(".lg-sub-article").html(arr['more']['html']);
+                    }
+                });
+        }
+    );
+    $("[tolv]").click(function () {
+        var tolv = $(this).attr('tolv');
+        var top = $('[traininglv=' + tolv + ']').offset().top;
+        $(window).smoothScroll({position: top - 150});
+        //alert();
+    });
+</script>
+</div>
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd" id="lg-alert-title"></div>
+        <div class="am-modal-bd" id="lg-alert-message"></div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+
+<script src="/js/ace/ace.js"></script>
+
+<script src="https://cdn.luogu.com.cn/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.com.cn/js/jsmind.js" data-manual></script>
+<!--
+<script src="https://cdn.luogu.com.cn/js/ajaxfileupload.js" data-manual></script>
+<script src="https://cdn.luogu.com.cn/js/jquery.pjax.js" data-manual></script>
+-->
+
+<!--ajaxfileupload.js highlight.pack.js jquery.pjax.js markDownEditor.js poshytip.js qrcode.min.js-->
+
+<script src="https://cdn.luogu.com.cn/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.com.cn/js/highcharts.js"></script>
+<script src="https://cdn.luogu.com.cn/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.com.cn/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.com.cn/js/luogu3.js?ver=20190724"></script>
+
+<!--script src="//www.recaptcha.net/recaptcha/api.js?hl=zh-CN&render=explicit&onload=renderCaptcha" async defer></script-->
+</body>
+</html>
